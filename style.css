@@ -1,4 +1,78 @@
-/* GRID */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
+  color: #eaeaea;
+}
+
+/* NAVBAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 180px;
+  cursor: pointer;
+  display: block;
+}
+
+/* NAV LINKS */
+.nav-links a {
+  color: #aaa;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.active {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* HEADINGS */
+h1, h2 {
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+/* CTA BUTTON */
+.cta {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #ff0033;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.cta:hover {
+  background: #ff1a4d;
+  box-shadow: 0 0 15px rgba(255, 0, 50, 0.4);
+}
+
+/* MUSIC GRID */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -16,7 +90,7 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* GLOW EFFECT LAYER */
+/* GLOW EFFECT */
 .card::before {
   content: "";
   position: absolute;
@@ -26,7 +100,7 @@
   transition: opacity 0.3s ease;
 }
 
-/* HOVER ANIMATION */
+/* HOVER */
 .card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 0 35px rgba(255, 0, 50, 0.25);
@@ -45,7 +119,6 @@
   transition: transform 0.3s ease;
 }
 
-/* SUBTLE ZOOM ON PLAYER */
 .card:hover iframe {
   transform: scale(1.02);
 }
@@ -63,9 +136,57 @@
   color: #fff;
 }
 
+/* LINKS */
+.link-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 1px solid #222;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.2s;
+}
+
+.link-item img {
+  width: 22px;
+  height: 22px;
+  filter: invert(1) brightness(0.9);
+}
+
+.link-item:hover {
+  color: #fff;
+  background: rgba(255, 0, 50, 0.05);
+}
+
+/* PLATFORM COLORS */
+.link-item:nth-child(1):hover { border-color: #ff5500; } /* SoundCloud */
+.link-item:nth-child(2):hover { border-color: #629aa9; } /* Bandcamp */
+.link-item:nth-child(3):hover { border-color: #1db954; } /* Spotify */
+.link-item:nth-child(4):hover { border-color: #fa233b; } /* Apple */
+.link-item:nth-child(5):hover { border-color: #888; }   /* Email */
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 12px;
+  color: #555;
+}
+
 /* MOBILE */
 @media (max-width: 700px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    margin-left: 10px;
   }
 }
